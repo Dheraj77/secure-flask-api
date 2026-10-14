@@ -1,3 +1,4 @@
+
 name: Python Tests
 
 on:
@@ -22,3 +23,9 @@ jobs:
 
       - name: Run tests
         run: python -m pytest -v
+
+      - name: Install security scanner
+        run: python -m pip install pip-audit
+
+      - name: Audit Python dependencies
+        run: python -m pip_audit
